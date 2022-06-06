@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skins",
+  "info": {
+    "singularName": "skin",
+    "pluralName": "skins",
+    "displayName": "Skin",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "weapon": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::weapon.weapon",
+      "inversedBy": "skins"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "unlockable": {
+      "type": "boolean",
+      "default": false
+    },
+    "rarity": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "select",
+        "deluxe",
+        "premium",
+        "ultra",
+        "exclusive"
+      ]
+    },
+    "available": {
+      "type": "boolean",
+      "default": true
+    },
+    "collection": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::collection.collection",
+      "inversedBy": "skins"
+    },
+    "skin_upgrades": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skin-upgrade.skin-upgrade",
+      "mappedBy": "skin"
+    }
+  }
+}

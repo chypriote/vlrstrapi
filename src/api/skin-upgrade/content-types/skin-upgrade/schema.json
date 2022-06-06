@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skin_upgrades",
+  "info": {
+    "singularName": "skin-upgrade",
+    "pluralName": "skin-upgrades",
+    "displayName": "SkinUpgrade"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "cost": {
+      "type": "integer",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "visuals",
+        "animation",
+        "finition",
+        "chroma"
+      ],
+      "required": true
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "level": {
+      "type": "integer",
+      "required": true
+    },
+    "skin": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::skin.skin",
+      "inversedBy": "skin_upgrades"
+    }
+  }
+}

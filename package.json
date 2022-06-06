@@ -1,0 +1,31 @@
+{
+  "name": "vlrstrapi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "dev": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/plugin-i18n": "^4.1",
+    "@strapi/plugin-users-permissions": "^4.1",
+    "@strapi/provider-upload-cloudinary": "^4.1",
+    "@strapi/strapi": "^4.1",
+    "better-sqlite3": "^7.5"
+  },
+  "author": {
+    "name": "Chypriote"
+  },
+  "strapi": {
+    "uuid": "1b6b1fcd-2277-4c65-b1e2-a3ccf65ac1f2"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0"
+  },
+  "license": "MIT"
+}
